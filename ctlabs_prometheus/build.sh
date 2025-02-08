@@ -43,7 +43,7 @@ build() {
       -p ${RPM_NAME}          \
       -n ${PKG_NAME}          \
       -v ${VERSION}           \
-      -a all                  \
+      -a amd64                \
       --url ${URL}            \
       --description "${DESC}" \
       /tmp/${NAME}/${SRCDIR}/${BINARY}=${DSTDIR}/${BINARY} \

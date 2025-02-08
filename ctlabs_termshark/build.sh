@@ -43,7 +43,7 @@ build() {
       -p ${RPM_NAME}          \
       -n ${PKG_NAME}          \
       -v ${VERSION}           \
-      -a all                  \
+      -a x86_64               \
       -d wireshark-cli        \
       --url ${URL}            \
       --description "${DESC}" \
