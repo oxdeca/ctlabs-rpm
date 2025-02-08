@@ -3,32 +3,33 @@
 # ------------------------------------------------------------------------------
 # SOURCES
 # ------------------------------------------------------------------------------
-NAME=termshark
-VERSION=2.4.0
-SRC_TAR=${NAME}_${VERSION}_linux_x64.tar.gz
-SRC_URL=https://github.com/gcla/termshark/releases/download/v${VERSION}/${SRC_TAR}
+VERSION=1.8.2
+NAME=node_exporter
+
+SRC_TAR=${NAME}-${VERSION}.linux-amd64.tar.gz
+SRC_URL="https://github.com/prometheus/node_exporter/releases/download/v${VERSION}/node_exporter-${VERSION}.linux-amd64.tar.gz"
 
 # ------------------------------------------------------------------------------
 # Package Attributes
 # ------------------------------------------------------------------------------
-DESC="A terminal user-interface for tshark"
-URL=https://github.com/gcla/termshark/
+DESC="Exporter for machine metrics"
+URL=https://github.com/prometheus/node_exporter
 PKG_NAME=ctlabs_${NAME}
 RPM_NAME=ctlabs_${NAME}-${VERSION}.rpm
-DEPS=( 'wireshark-cli' )
+DEPS=()
 
 # ------------------------------------------------------------------------------
 # Build Details
 # ------------------------------------------------------------------------------
 BINARY=${NAME}
-SRCDIR=${NAME}_${VERSION}_linux_x64
+SRCDIR=${NAME}-${VERSION}.linux-amd64
 DSTDIR=/opt/${NAME}-${VERSION}
 
 # ------------------------------------------------------------------------------
 # Build Functions
 # ------------------------------------------------------------------------------
 prepare() {
-  mkdir /tmp/${NAME}
+  mkdir -vp /tmp/${NAME}
   cd /tmp/${NAME} && curl -sLO ${SRC_URL} && tar xvf ${SRC_TAR}
   cd -
 }
@@ -43,7 +44,6 @@ build() {
       -n ${PKG_NAME}          \
       -v ${VERSION}           \
       -a all                  \
-      -d wireshark-cli        \
       --url ${URL}            \
       --description "${DESC}" \
       /tmp/${NAME}/${SRCDIR}/${BINARY}=${DSTDIR}/${BINARY} \
