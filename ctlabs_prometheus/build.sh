@@ -12,8 +12,8 @@ SRC_URL="https://github.com/prometheus/${NAME}/releases/download/v${VERSION}/${N
 # ------------------------------------------------------------------------------
 # Package Attributes
 # ------------------------------------------------------------------------------
-DESC="Exporter for machine metrics"
-URL=https://github.com/prometheus/node_exporter
+DESC="The Prometheus monitoring system and time series database"
+URL=https://github.com/prometheus/prometheus
 PKG_NAME=ctlabs_${NAME}
 RPM_NAME=ctlabs_${NAME}-${VERSION}.rpm
 DEPS=()
