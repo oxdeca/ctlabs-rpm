@@ -47,6 +47,7 @@ build() {
       --url ${URL}            \
       --description "${DESC}" \
       /tmp/${NAME}/${SRCDIR}/${BINARY}=${DSTDIR}/${BINARY} \
+      /tmp/${NAME}/${SRCDIR}/${BINARY}=${DSTDIR}/promtool  \
       /tmp/${NAME}/${SRCDIR}/${NAME}_LINK=/usr/bin/${BINARY}
 }
 
