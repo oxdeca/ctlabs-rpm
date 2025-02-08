@@ -37,6 +37,7 @@ prepare() {
 build() {
   #cd /tmp/${NAME}/${SRCDIR}   &&
   ln -sv ${DSTDIR}/${BINARY} /tmp/${NAME}/${SRCDIR}/${NAME}_LINK
+  ln -sv ${DSTDIR}/promtool  /tmp/${NAME}/${SRCDIR}/promtool_LINK
 
   fpm -s dir                  \
       -t rpm                  \
@@ -46,9 +47,10 @@ build() {
       -a amd64                \
       --url ${URL}            \
       --description "${DESC}" \
-      /tmp/${NAME}/${SRCDIR}/${BINARY}=${DSTDIR}/${BINARY} \
-      /tmp/${NAME}/${SRCDIR}/${BINARY}=${DSTDIR}/promtool  \
-      /tmp/${NAME}/${SRCDIR}/${NAME}_LINK=/usr/bin/${BINARY}
+      /tmp/${NAME}/${SRCDIR}/${BINARY}=${DSTDIR}/${BINARY}   \
+      /tmp/${NAME}/${SRCDIR}/${NAME}_LINK=/usr/bin/${BINARY} \
+      /tmp/${NAME}/${SRCDIR}/${BINARY}=${DSTDIR}/promtool    \
+      /tmp/${NAME}/${SRCDIR}/promtool_LINK=/usr/bin/promtool
 }
 
 cleanup() {
