@@ -3,8 +3,9 @@
 # ------------------------------------------------------------------------------
 # SOURCES
 # ------------------------------------------------------------------------------
-NAME=termshark
 VERSION=2.4.0
+NAME=termshark
+
 SRC_TAR=${NAME}_${VERSION}_linux_x64.tar.gz
 SRC_URL=https://github.com/gcla/termshark/releases/download/v${VERSION}/${SRC_TAR}
 
@@ -56,4 +57,4 @@ cleanup() {
 
 prepare
 build
-#cleanup
+cleanup

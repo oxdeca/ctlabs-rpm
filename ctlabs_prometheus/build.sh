@@ -3,8 +3,8 @@
 # ------------------------------------------------------------------------------
 # SOURCES
 # ------------------------------------------------------------------------------
-VERSION=1.8.2
-NAME=node_exporter
+VERSION=3.1.0
+NAME=prometheus
 
 SRC_TAR=${NAME}-${VERSION}.linux-amd64.tar.gz
 SRC_URL="https://github.com/prometheus/${NAME}/releases/download/v${VERSION}/${NAME}-${VERSION}.linux-amd64.tar.gz"
